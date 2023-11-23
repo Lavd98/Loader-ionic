@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController, NavController } from '@ionic/angular';
+import { LoadingController, ModalController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-loader',
@@ -14,7 +14,7 @@ export class LoaderComponent implements OnInit {
   images: Array<{ src: string; text: string }> = [];
   currentIndex = 0;
 
-  constructor(private router: Router) {}
+  constructor(private loadingController: LoadingController) {}
 
   ngOnInit(): void {
     this.images = this.config.images.map((image) => ({
