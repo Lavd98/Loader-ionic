@@ -1,3 +1,6 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
+
+<ion-button (click)="startLoader()">Iniciar Loader</ion-button>
+<app-loader *ngIf="loaderActive" [config]="loaderConfig"></app-loader>

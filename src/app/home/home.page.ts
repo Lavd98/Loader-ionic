@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  images = [
+    {src: 'image1.png', text: 'Cargando'},
+    {src: 'image2.png', text: 'Procesando'},
+  ];
+  showLoader = false;
+  constructor(router: Router){
 
-  constructor() {}
+  }
+  callApi() { 
+    this.showLoader = true;
 
+    setTimeout(() => {
+      this.showLoader = false;
+      // this.router.navigate(['/other-page']); 
+    }, 5000);
+  }
 }
